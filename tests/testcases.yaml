@@ -1,0 +1,231 @@
+default:
+# URLs ending with `.pdf` will be skipped since it cannot be tested by Selenium.
+- url: https://arxiv.org/abs/2203.14206
+  title: "[2203.14206] Denoising Likelihood Score Matching for Conditional Score-based Data Generation"
+  description: basic testcase
+- url: https://arxiv.org/pdf/2203.14206.pdf
+  title: 2203.14206.pdf
+  description: basic testcase
+- url: https://arxiv.org/abs/1906.07413
+  title: "[1906.07413] Learning Imbalanced Datasets with Label-Distribution-Aware Margin Loss"
+  description: latex-defined pdf name 1 (for chrome)
+- url: https://arxiv.org/pdf/1906.07413.pdf
+  title: Sharelatex Example
+  description: latex-defined pdf name 1 (for chrome)
+- url: https://arxiv.org/abs/2003.01367
+  title: "[2003.01367] Curriculum By Smoothing"
+  description: latex-defined pdf name 2 (for chrome)
+- url: https://arxiv.org/pdf/2003.01367.pdf
+  title: 2003.01367.pdf
+  description: latex-defined pdf name 2 (for chrome)
+navigation:
+- url: https://arxiv.org/abs/2203.14206
+  title: Denoising Likelihood Score Matching for Conditional Score-based Data Generation | Abstract
+  pdf_url: https://arxiv.org/pdf/2203.14206.pdf
+  pdf_title: Denoising Likelihood Score Matching for Conditional Score-based Data Generation | PDF
+  description: basic testcase
+- url: https://arxiv.org/abs/1110.2832
+  title: Can apparent superluminal neutrino speeds be explained as a quantum weak measurement? | Abstract
+  pdf_url: https://arxiv.org/ftp/arxiv/papers/1110/1110.2832.pdf
+  pdf_title: Can apparent superluminal neutrino speeds be explained as a quantum weak measurement? | PDF
+  abs2pdf: False
+  description: special ftp format
+- url: https://arxiv.org/abs/1110.2832
+  title: Can apparent superluminal neutrino speeds be explained as a quantum weak measurement? | Abstract
+  pdf_url: https://arxiv.org/pdf/1110.2832.pdf
+  pdf_title: Can apparent superluminal neutrino speeds be explained as a quantum weak measurement? | PDF
+  description: special ftp format
+- url: https://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://export.arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  abs2pdf: False
+  description: pdf with export.arxiv.org subdomain
+- url: https://export.arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  pdf2abs: False
+  description: abs with export.arxiv.org subdomain
+- url: https://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678
+  pdf_title: Designing Network Design Spaces | PDF
+  abs2pdf: False
+  description: pdf not ending with `.pdf`
+- url: https://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678/
+  pdf_title: Designing Network Design Spaces | PDF
+  abs2pdf: False
+  description: pdf with trailing slash
+- url: https://arxiv.org/abs/2003.13678/
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  pdf2abs: False
+  description: abs with trailing slash
+- url: https://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678//
+  pdf_title: Designing Network Design Spaces | PDF
+  abs2pdf: False
+  description: pdf with trailing double slash
+- url: https://arxiv.org/abs/2003.13678//
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  pdf2abs: False
+  description: abs with trailing double slash
+- url: https://arxiv.org/abs/cs/9605103
+  title: "Reinforcement Learning: A Survey | Abstract"
+  pdf_url: https://arxiv.org/pdf/cs/9605103.pdf
+  pdf_title: "Reinforcement Learning: A Survey | PDF"
+  description: old url basic testcase
+- url: https://arxiv.org/abs/cs/9605103
+  title: "Reinforcement Learning: A Survey | Abstract"
+  pdf_url: https://arxiv.org/pdf/cs/9605103
+  pdf_title: "Reinforcement Learning: A Survey | PDF"
+  abs2pdf: False
+  description: old url pdf not ending with `.pdf`
+- url: https://arxiv.org/abs/cs/9605103
+  title: "Reinforcement Learning: A Survey | Abstract"
+  pdf_url: https://arxiv.org/pdf/cs/9605103/
+  pdf_title: "Reinforcement Learning: A Survey | PDF"
+  abs2pdf: False
+  description: old url pdf with trailing slash
+- url: https://arxiv.org/abs/cs/9605103/
+  title: "Reinforcement Learning: A Survey | Abstract"
+  pdf_url: https://arxiv.org/pdf/cs/9605103.pdf
+  pdf_title: "Reinforcement Learning: A Survey | PDF"
+  pdf2abs: False
+  description: old url abs with trailing slash
+- url: https://arxiv.org/abs/cond-mat/0408502
+  title: Pressure Raman Effects and Internal Stress in Network Glasses | Abstract
+  pdf_url: https://arxiv.org/ftp/cond-mat/papers/0408/0408502.pdf
+  pdf_title: Pressure Raman Effects and Internal Stress in Network Glasses | PDF
+  abs2pdf: False
+  description: old url with special ftp format
+- url: https://arxiv.org/abs/1512.03385?query#anchor
+  title: Deep Residual Learning for Image Recognition | Abstract
+  pdf_url: https://arxiv.org/pdf/1512.03385.pdf
+  pdf_title: Deep Residual Learning for Image Recognition | PDF
+  pdf2abs: False
+  description: abs with query strings and fragments
+- url: https://arxiv.org/abs/1512.03385
+  title: Deep Residual Learning for Image Recognition | Abstract
+  pdf_url: https://arxiv.org/pdf/1512.03385.pdf?query#anchor
+  pdf_title: Deep Residual Learning for Image Recognition | PDF
+  abs2pdf: False
+  description: pdf with query strings and fragments
+- url: https://arxiv.org/abs/1906.07413
+  title: Learning Imbalanced Datasets with Label-Distribution-Aware Margin Loss | Abstract
+  pdf_url: https://arxiv.org/pdf/1906.07413.pdf
+  pdf_title: Learning Imbalanced Datasets with Label-Distribution-Aware Margin Loss | PDF
+  description: latex-defined pdf name 1 (for chrome)
+- url: https://arxiv.org/abs/2003.01367
+  title: Curriculum By Smoothing | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.01367.pdf
+  pdf_title: Curriculum By Smoothing | PDF
+  description: latex-defined pdf name 2 (for chrome)
+- url: https://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: http://arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  abs2pdf: False
+  description: with HTTP (for firefox)
+- url: http://arxiv.org/abs/2003.13678
+  title: Designing Network Design Spaces | Abstract
+  pdf_url: https://arxiv.org/pdf/2003.13678.pdf
+  pdf_title: Designing Network Design Spaces | PDF
+  pdf2abs: False
+  description: with HTTP (for firefox)
+# Below are testcases for external URLs
+- url: https://ar5iv.labs.arxiv.org/html/1512.03385
+  title: Deep Residual Learning for Image Recognition | HTML5
+  url2: https://arxiv.org/abs/1512.03385
+  title2: Deep Residual Learning for Image Recognition | Abstract
+  description: ar5iv -> arXiv
+- url: https://www.arxiv-vanity.com/papers/1512.03385/
+  title: Deep Residual Learning for Image Recognition – arXiv Vanity
+  url2: https://arxiv.org/abs/1512.03385
+  title2: Deep Residual Learning for Image Recognition | Abstract
+  description: arxiv-vanity -> arXiv
+- url: https://openreview.net/pdf?id=LcF-EEt8cCC
+  url2: https://openreview.net/forum?id=LcF-EEt8cCC
+  title2: Denoising Likelihood Score Matching for Conditional Score-based Data Generation | OpenReview
+  description: OpenReview pdf -> abs
+- url: https://openreview.net/forum?id=LcF-EEt8cCC
+  title: Denoising Likelihood Score Matching for Conditional Score-based Data Generation | OpenReview
+  url2: https://openreview.net/pdf?id=LcF-EEt8cCC
+  description: OpenReview abs -> pdf
+- url: https://openreview.net/forum?id=LcF-EEt8cCC&referrer=[Author Console]
+  title: Denoising Likelihood Score Matching for Conditional Score-based Data Generation | OpenReview
+  url2: https://openreview.net/pdf?id=LcF-EEt8cCC
+  description: OpenReview abs (with query strings) -> pdf
+- url: https://papers.nips.cc/paper_files/paper/1987/file/02e74f10e0327ad868d138f2b4fdd6f0-Paper.pdf
+  url2: https://papers.nips.cc/paper_files/paper/1987/hash/02e74f10e0327ad868d138f2b4fdd6f0-Abstract.html
+  title2: Bit-Serial Neural Networks
+  description: NIPS pdf -> abs (1987)
+- url: https://papers.nips.cc/paper_files/paper/1987/hash/02e74f10e0327ad868d138f2b4fdd6f0-Abstract.html
+  title: Bit-Serial Neural Networks
+  url2: https://papers.nips.cc/paper_files/paper/1987/file/02e74f10e0327ad868d138f2b4fdd6f0-Paper.pdf
+  description: NIPS abs -> pdf (1987)
+- url: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-Paper.pdf
+  url2: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title2: Improved Precision and Recall Metric for Assessing Generative Models
+  description: NIPS pdf -> abs (2019)
+- url: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-Reviews.html
+  url2: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title2: Improved Precision and Recall Metric for Assessing Generative Models
+  description: NIPS reviews -> abs (2019)
+- url: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-Metadata.json
+  url2: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title2: Improved Precision and Recall Metric for Assessing Generative Models
+  description: NIPS metadata -> abs (2019)
+- url: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-MetaReview.html
+  url2: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title2: Improved Precision and Recall Metric for Assessing Generative Models
+  description: NIPS meta-review -> abs (2019)
+- url: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-AuthorFeedback.pdf
+  url2: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title2: Improved Precision and Recall Metric for Assessing Generative Models
+  description: NIPS author-feedback -> abs (2019)
+- url: https://papers.nips.cc/paper_files/paper/2019/hash/0234c510bc6d908b28c70ff313743079-Abstract.html
+  title: Improved Precision and Recall Metric for Assessing Generative Models
+  url2: https://papers.nips.cc/paper_files/paper/2019/file/0234c510bc6d908b28c70ff313743079-Paper.pdf
+  description: NIPS abs -> pdf (2019)
+- url: https://papers.nips.cc/paper_files/paper/2021/file/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Paper.pdf
+  url2: https://papers.nips.cc/paper_files/paper/2021/hash/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Abstract.html
+  title2: "MLP-Mixer: An all-MLP Architecture for Vision"
+  description: NIPS pdf -> abs (2021)
+- url: https://papers.nips.cc/paper_files/paper/2021/file/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Supplemental.pdf
+  url2: https://papers.nips.cc/paper_files/paper/2021/hash/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Abstract.html
+  title2: "MLP-Mixer: An all-MLP Architecture for Vision"
+  description: NIPS sup -> abs (2021)
+- url: https://papers.nips.cc/paper_files/paper/2021/hash/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Abstract.html
+  title: "MLP-Mixer: An all-MLP Architecture for Vision"
+  url2: https://papers.nips.cc/paper_files/paper/2021/file/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Paper.pdf
+  description: NIPS abs -> pdf (2021)
+- url: https://papers.nips.cc/paper_files/paper/2022/file/93f250215e4889119807b6fac3a57aec-Paper-Conference.pdf
+  url2: https://papers.nips.cc/paper_files/paper/2022/hash/93f250215e4889119807b6fac3a57aec-Abstract-Conference.html
+  title2: Decomposing NeRF for Editing via Feature Field Distillation
+  description: NIPS pdf -> abs (2022) with `Conference` suffix
+- url: https://papers.nips.cc/paper_files/paper/2022/hash/93f250215e4889119807b6fac3a57aec-Abstract-Conference.html
+  title: Decomposing NeRF for Editing via Feature Field Distillation
+  url2: https://papers.nips.cc/paper_files/paper/2022/file/93f250215e4889119807b6fac3a57aec-Paper-Conference.pdf
+  description: NIPS abs -> pdf (2022) with `Conference` suffix
+- url: https://proceedings.mlr.press/v139/sun21c/sun21c.pdf
+  url2: https://proceedings.mlr.press/v139/sun21c.html
+  title2: "DFAC Framework: Factorizing the Value Function via Quantile Mixture for Multi-Agent Distributional Q-Learning"
+  description: PMLR pdf -> abs (2021)
+- url: https://proceedings.mlr.press/v139/sun21c/sun21c-supp.pdf
+  url2: https://proceedings.mlr.press/v139/sun21c.html
+  title2: "DFAC Framework: Factorizing the Value Function via Quantile Mixture for Multi-Agent Distributional Q-Learning"
+  description: PMLR sup -> abs (2021)
+- url: https://proceedings.mlr.press/v139/sun21c.html
+  title: "DFAC Framework: Factorizing the Value Function via Quantile Mixture for Multi-Agent Distributional Q-Learning"
+  url2: https://proceedings.mlr.press/v139/sun21c/sun21c.pdf
+  description: PMLR abs -> pdf (2021)
+# TODO: Test download filename with: https://arxiv.org/abs/2209.12753
+# TODO: using `${title}, ${firstAuthor} et al., ${authors}, ${publishedYear}, ${updatedYear}, v${version}.pdf`

@@ -1,0 +1,113 @@
+body {
+    background-color: #F5F5F5; /* light gray */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333; /* dark gray */
+    resize: both;
+    overflow: auto;
+    width: 600px;
+    height: 2000px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    color: #333; /* dark gray */
+  }
+  button {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #5CB85C; /* soft green */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  button:hover {
+    background-color: #4CAE4C; /* darker soft green on hover */
+  }
+  .close-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #f69870; /* soft green */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    align-self: center;
+  }
+  .close-button:hover {
+    background-color: #b20f00; /* darker soft green on hover */
+  }
+  
+  #tablist {
+    overflow-y: auto;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .tab-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    color: #333; /* dark gray */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .tab-item:hover {
+    background-color: #97d298; /* light dull green on hover */
+    color: #333;
+  }
+  .tab-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  .tab-title {
+    flex-grow: 1;
+  }
+  
+
+#search-bar {
+  margin: 20px 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  color: #333; /* dark gray */
+  background-color: #FFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+  width: 40%; /* added width property */
+}
+
+#search-bar:focus {
+  outline: none;
+  background-color: #F5F5F5; /* light gray on focus */
+}
+
+
+
+  

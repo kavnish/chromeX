@@ -1,0 +1,44 @@
+{
+  "name": "new-tab-on-the-left",
+  "version": "1.7.2",
+  "description": "Tab manager + New-Tabs-on-the-left + Easy access on ArXiv! Rename the title to the paper's title. Add a button to navigate easily. Download PDF with meaningful filename.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": [ "*://arxiv.org/*pdf*", "*://arxiv.org/abs/*",
+      "*://export.arxiv.org/*pdf*", "*://export.arxiv.org/abs/*",
+      "*://ar5iv.labs.arxiv.org/html/*"],
+    "js": [ "content.js" ],
+    "run_at": "document_end"
+  }],
+  "action": {
+    "default_icon": {
+      "48": "left-48.png",
+      "96": "left-96.png"
+    },
+    "default_title": "Open Abstract / PDF",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "scripting",
+    "downloads",
+    "tabGroups"
+  ],
+  "host_permissions": [
+    "*://arxiv.org/*",
+    "*://export.arxiv.org/*",
+    "*://ar5iv.labs.arxiv.org/*",
+    "*://127.0.0.1:5000/*"
+  ],
+  "icons": {
+    "48": "left-48.png",
+    "96": "left-96.png"
+  },
+  "options_page": "options.html",
+  "manifest_version": 3
+}
