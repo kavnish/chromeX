@@ -39,6 +39,14 @@
     "48": "left-48.png",
     "96": "left-96.png"
   },
+  "commands": {
+    "open_new_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U"
+      },
+      "description": "Open a new tab outside of groups"
+    }
+  },
   "options_page": "options.html",
   "manifest_version": 3
 }

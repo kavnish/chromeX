@@ -55,6 +55,33 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+
+  
+
+  var group2rightButton = document.getElementById("group2right");
+  group2rightButton.addEventListener("click", function (){
+    // chrome.tabs.query({ windowType: 'normal' }, function(tabs) {
+    //   var tabGroups = {};
+  
+    //   tabs.forEach(function(t) {
+    //     if (t.groupId !== -1) {
+    //       if (!tabGroups[t.groupId]) {
+    //         tabGroups[t.groupId] = [];
+    //       }
+    //       tabGroups[t.groupId].push(t.id);
+    //     }
+    //   });
+  
+    //   Object.keys(tabGroups).forEach(function(groupId) {
+    //     var groupTabs = tabGroups[groupId];
+    //     var lastTab = tabs[tabs.length - 1];
+  
+    //     chrome.tabs.move(groupTabs, { index: lastTab.index + 1 });
+    //   });
+    // });
+  });
+
+
   // Arxiv download button.
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     var pageTitle = tabs[0].title;

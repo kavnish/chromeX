@@ -121,23 +121,22 @@ chrome.tabs.onCreated.addListener(function(tab) {
   });
 });
 
-chrome.tabs.onCreated.addListener(function(tab) {
-  var tab_info = [];
-  chrome.tabs.query({}, function(tabs) {
-    for (var i = 0; i < tabs.length; i++){
-      tab_info.push([i, tabs[i].url, tabs[i].title, tabs[i].groupId]);
-    }
+// chrome.tabs.onCreated.addListener(function(tab) {
+//   // Wait for the tab to render before pulling the title and other information
+
+// });
+
+function postTabInfo(tabId, changeInfo, updatedTab) {
+  if (changeInfo.status === 'complete') {
     // Configure the fetch request
     var requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({"Tab-Info": tab_info})
+      body: JSON.stringify({"Tab-Info": [[updatedTab.index, updatedTab.url, updatedTab.title, updatedTab.groupId, parseInt(updatedTab.id)]]})
     };
 
-    console.log("Posting Data : ", JSON.stringify({"Tab-Info": tab_info}), {"Tab-Info": tab_info}, typeof(tab_info), tab_info);
-    
     // Send the POST request
     fetch('http://127.0.0.1:5000/push', requestOptions)
       .then(response => {
@@ -150,13 +149,35 @@ chrome.tabs.onCreated.addListener(function(tab) {
       .catch(error => {
         console.error('Error sending POST request:', error);
       });
-  });
+  }
+}
+
+chrome.tabs.onUpdated.addListener(postTabInfo);
+chrome.tabs.onAttached.addListener(postTabInfo);
+
+
+//opens new tabs outside of the current group
+chrome.commands.onCommand.addListener(function(command) {
+  if (command == "open_new_tab") {
+    console.log("Opening new tab.");
+    chrome.tabs.create({index: 0 });
+  }
 });
 
 chrome.tabs.query({}, function(tabs) {
   if (!tabs) return;
   for (const tab of tabs)
     updateActionStateAsync(tab.id, tab.url)
+});
+
+
+// Reverse the order of the tabs when the browser is reloaded.
+chrome.windows.onCreated.addListener(function(window) {
+  chrome.tabs.query({ windowId: window.id }, function(tabs) {
+    for (let i = tabs.length - 1; i >= 0; i--) {
+      chrome.tabs.move(tabs[i].id, { index: 0 });
+    }
+  });
 });
 
 chrome.tabs.onUpdated.addListener(onTabUpdated);
