@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //initialize a pool list here which is not an element
   var saveButton = document.getElementById('save');
   var tabListDiv = document.getElementById('tablist');
+  var heading = document.getElementById('main-title');
 
   // The Tab list item
   function createTabListItem(tab) {
@@ -41,22 +42,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // The Tab list
-  chrome.tabs.query({}, function (tabs) {
+  chrome.tabs.query({currentWindow: true}, function (tabs) {
     while (tabListDiv.firstChild) {
       tabListDiv.removeChild(tabListDiv.firstChild);
     }
-      for (var i = 0; i < tabs.length; i++) {
-      if (true) {
-        var listItem = createTabListItem(tabs[i]);
-        poolList.push([(i + 1), tabs[i].index, tabs[i].title, tabs[i].url]);
-        tabListDiv.appendChild(listItem);
-      }
+    for (var i = 0; i < tabs.length; i++) {
+      var listItem = createTabListItem(tabs[i]);
+      heading.textContent = 'Tab Pool (' + (poolList.length + 1) + ')';
+      poolList.push([(i + 1), tabs[i].index, tabs[i].title, tabs[i].url]);
+      tabListDiv.appendChild(listItem);
     }
   });
 
-
-
-  
+  // New button to show tabIds
+  var showTabIdsButton = document.getElementById('show-ids');
+  showTabIdsButton.textContent = 'Show TabIds';
+  showTabIdsButton.addEventListener('click', function() {
+    for (let i = 0; i < tabListDiv.children.length; i++) {
+      const listItem = tabListDiv.children[i];
+      const tabId = listItem.getAttribute('data-tab-id');
+      listItem.textContent = i + '. ' + tabId + ' -- title-wip';
+    }
+  });
 
   var group2rightButton = document.getElementById("group2right");
   group2rightButton.addEventListener("click", function (){
@@ -130,3 +137,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+

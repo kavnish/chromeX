@@ -164,3 +164,4 @@ async function mainAsync() {
 mainAsync();
 // Listen for title-change messages from the background script.
 chrome.runtime.onMessage.addListener(onMessageAsync);
+

@@ -81,6 +81,7 @@ chrome.tabs.onCreated.addListener(tab =>  {
   })
 })
 
+
 chrome.tabs.onRemoved.addListener((removedTabId, removeInfo) => {
   chrome.storage.local.get(['openerTabIdMap'], result => {
     console.log("remove tab ", removedTabId)
@@ -116,15 +117,47 @@ chrome.tabs.onCreated.addListener(function(tab) {
     if (currentTab.groupId === -1) {
       // The current tab is not in a group, so move the new tab to index 0
       chrome.tabs.move(tab.id, {index: 0});
-      console.log("Tab Moved to: ", tab.groupId);
+      console.log(`Tab ${tab.id} -- ${tab.title} Moved to the left!!`);
     }
   });
 });
 
-// chrome.tabs.onCreated.addListener(function(tab) {
-//   // Wait for the tab to render before pulling the title and other information
 
-// });
+chrome.tabs.onAttached.addListener(() => {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var tab = tabs[0];
+    if (tab.groupId === -1) {
+      // The current tab is not in a group, so move the new tab to index 0
+      chrome.tabs.move(tab.id, {index: 0});
+      console.log(`Tab ${tab.id} -- ${tab.title} Moved to the left!!`);
+    }
+  });
+});
+
+
+chrome.tabs.onCreated.addListener(function(tab) {
+
+  chrome.tabs.query({}, function(tabs) {
+    const totalTabs = tabs.length;
+    chrome.action.setBadgeBackgroundColor({"color": [225, 0, 0,
+      0]});
+    chrome.action.setBadgeText({
+      text: totalTabs.toString()
+    });
+  });
+
+  chrome.browserAction.setBadgeText({text: 'abc'});
+  // Wait for the tab to render before pulling the title and other information
+  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, updatedTab) {
+    if (tabId === tab.id && changeInfo.status === 'complete') {
+      postTabInfo(tabId, changeInfo, updatedTab);
+      chrome.tabs.onUpdated.removeListener(arguments.callee);
+    }
+  });
+});
+
+
+
 
 function postTabInfo(tabId, changeInfo, updatedTab) {
   if (changeInfo.status === 'complete') {
@@ -152,9 +185,6 @@ function postTabInfo(tabId, changeInfo, updatedTab) {
   }
 }
 
-chrome.tabs.onUpdated.addListener(postTabInfo);
-chrome.tabs.onAttached.addListener(postTabInfo);
-
 
 //opens new tabs outside of the current group
 chrome.commands.onCommand.addListener(function(command) {
@@ -173,11 +203,18 @@ chrome.tabs.query({}, function(tabs) {
 
 // Reverse the order of the tabs when the browser is reloaded.
 chrome.windows.onCreated.addListener(function(window) {
-  chrome.tabs.query({ windowId: window.id }, function(tabs) {
-    for (let i = tabs.length - 1; i >= 0; i--) {
-      chrome.tabs.move(tabs[i].id, { index: 0 });
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var currentTab = tabs[0];
+    if (currentTab.groupId === -1) {
+      chrome.tabs.query({ windowId: window.id }, function(tabs) {
+        for (let i = tabs.length - 1; i >= 0; i--) {
+          chrome.tabs.move(tabs[i].id, { index: 0 });
+        }
+      });
     }
   });
+
+
 });
 
 chrome.tabs.onUpdated.addListener(onTabUpdated);
